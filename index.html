@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crosshair Pro</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .crosshair {
+      width: 20px;
+      height: 20px;
+      border: 2px solid red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Crosshair App</h1>
+  <div class="crosshair" id="mira"></div>
+  <button onclick="solicitarPip()">Ativar Mira Flutuante (PiP)</button>
+
+  <script>
+    async function solicitarPip() {
+      if ('pictureInPictureEnabled' in document) {
+        alert("Iniciando janela flutuante...");
+      } else {
+        alert("O seu navegador ou app não suporta o modo flutuante nativo.");
+      }
+    }
+  </script>
+</body>
+</html>
